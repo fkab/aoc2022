@@ -27,10 +27,6 @@ def find_intersection_of_strings(strings):
     return set.intersection(*(set(tokenize(x)) for x in strings)).pop()
 
 
-def find_intersection(string1, string2, string3):
-    return set.intersection(set(tokenize(string1)), set(tokenize(string2)), set(tokenize(string3))).pop()
-
-
 def part_one():
     print(sum([priority(find_intersection_of_strings(split_into(x, 2))) for x in read_input()]))
 
