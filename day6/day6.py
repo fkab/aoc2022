@@ -5,13 +5,9 @@ def read_input():
 
 def determine_marker(size):
     input_str = read_input()
-    sliding_window = [set([s for s in input_str[i:i + size]]) for i in range(0, len(input_str)) if
-                      len(input_str) - i > size - 1]
-
-    for i, e in enumerate(sliding_window):
-        if len(e) == size:
-            print(i + size)
-            break
+    sliding_window = [set([s for s in input_str[i:i + size]])
+                      for i in range(0, len(input_str)) if len(input_str) - i > size - 1]
+    print(next(i for i, x in enumerate(sliding_window) if len(x) == size) + size)
 
 
 def part_one():
